@@ -1,6 +1,11 @@
 Changes
+Toolkit.pm
 Makefile.PL
 MANIFEST
 README
-Toolkit.pm
+README.html
 t/1.t
+t/2.t
+t/3.t
+samples/mytemplate.pl
+samples/hash2sql.pl

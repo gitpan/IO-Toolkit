@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Toolkit.pm</title>
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#abstract">ABSTRACT</a></li>
+	<li><a href="#prerequisits">PREREQUISITS</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#io::toolkit::logme(m,message)">IO::Toolkit::logme(``M'',``Message'')</a></li>
+		<li><a href="#io::toolkit::moduleinfo">IO::Toolkit::moduleinfo</a></li>
+		<li><a href="#io::toolkit::trim">IO::Toolkit::trim</a></li>
+		<li><a href="#io::toolkit::hash2sql">IO::Toolkit::hash2sql</a></li>
+		<li><a href="#io::toolkit::encrypt_and_io::toolkit::decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></li>
+		<li><a href="#io::toolkit::pid(exclusive|overwrite|remove,/tmp/filename.pid);">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></li>
+		<li><a href="#my_$md5_=_io::toolkit::get_md5_checksum(toolkit.pm);">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></li>
+	</ul>
+
+	<li><a href="#export">EXPORT</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#copyright_and_license">COPYRIGHT AND LICENSE</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>IO::Toolkit</p>
+<p>
+</p>
+<hr />
+<h1><a name="abstract">ABSTRACT</a></h1>
+<p>IO::Toolkit - Perl extension to create logfiles</p>
+<p>
+</p>
+<hr />
+<h1><a name="prerequisits">PREREQUISITS</a></h1>
+<p>This module needs Crypt::RC6 for its encryption/decryption routine.
+Digest::MD5 and DirHandle used for checksum routines.</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>Sample Script (please also have a look into the samples directory):</p>
+<pre>
+   use IO::Toolkit;
+   use File::Basename;</pre>
+<pre>
+   package main;
+   use vars qw($getopt_loglevel $program $programname);</pre>
+<pre>
+   my $program = basename($0);    
+   $programname = $program;
+   $programname =~ s/\.pl//g;</pre>
+<pre>
+   my $logfilename = $programname . &quot;.log&quot;;
+   my $VERSION = sprintf &quot;%d.%05d&quot;, '$Revision:   1.4  $' =~ /(\d+)/g;
+   my $description = &quot;Script&quot;;</pre>
+<pre>
+   my $extra;
+   my @extra_options = (
+                        { 
+                                Spec            =&gt;  &quot;extra=s&quot;,
+                                Variable        =&gt; \$extra,
+                                Help            =&gt; &quot;--extra=whatever&quot;,
+                                Verbose         =&gt; [&quot;--extra=whatever&quot;,
+                                                    &quot;whatever whenever...&quot;,
+                                                   ] 
+                        },
+                    );
+                
+   IO::Toolkit::commandline(@extra_options);</pre>
+<pre>
+   logme(&quot;open&quot;, $logfilename);
+   logme(&quot;M&quot;,&quot;$programname V$VERSION started --------------------------------------------------&quot;);
+   logme(&quot;C&quot;, &quot;Logfile $logfilename used.&quot;);
+   logme(&quot;M&quot;,&quot;$programname V$VERSION ended   --------------------------------------------------&quot;);
+   logme(&quot;close&quot;);
+   
+This displays and creates a logfile like this:</pre>
+<pre>
+   2004-11-14 13:07:48 [mytemplate] &lt;M&gt; mytemplate V1.00004 started --------------------------------------------------
+   2004-11-14 13:07:48 [mytemplate] &lt;C&gt; Logfile mytemplate.log used.
+   2004-11-14 13:07:48 [mytemplate] &lt;M&gt; mytemplate V1.00004 ended   --------------------------------------------------</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Provides a human-readable logfile and is ment to replace ``print'' and ``die'' in your programs.</p>
+<p>This module was written to provide an easy way to log messages. It
+checks for an option --loglevel=EMCDQ- where each character stands 
+for a certain level. e.g.</p>
+<pre>
+   E   = Error
+   S   = System
+   M   = Message
+   D   = Debug
+   -   = Silent
+   all = All messages</pre>
+<p>You can use all characters you would like to use. These are just examples.</p>
+<p>the minus (``-'') has a special meaning: supresses output to the screen and
+ONLY logs them to the file. Please see the sample script for more details.</p>
+<p>The function gettimestamp returns the current time in the format used for the logfile. 
+If you specifiy the format &amp;gettimestamp(``filename'') it returns something like
+this: 20041009131500</p>
+<p>
+</p>
+<h2><a name="io::toolkit::logme(m,message)">IO::Toolkit::logme(``M'',``Message'')</a></h2>
+<p>The first parameter specifies the severity of the message. The message is only logged, if 
+$getopt_loglevel contains that severity.</p>
+<p>Because IO::Toolkit::logme is exported, you can just use <code>logme(``M'',``message'')</code> in your scripts.</p>
+<p>
+</p>
+<h2><a name="io::toolkit::moduleinfo">IO::Toolkit::moduleinfo</a></h2>
+<p>prints a list of loaded modules.</p>
+<p>
+</p>
+<h2><a name="io::toolkit::trim">IO::Toolkit::trim</a></h2>
+<p>trims a variable.</p>
+<p>
+</p>
+<h2><a name="io::toolkit::hash2sql">IO::Toolkit::hash2sql</a></h2>
+<p>creates SQL code to insert a hash into a table.</p>
+<p>Example:</p>
+<pre>
+   use IO::Toolkit;</pre>
+<pre>
+   my %hash=(
+      firstname=&gt;&quot;Markus&quot;,
+      lastname=&gt;&quot;Linke&quot;,
+   );</pre>
+<pre>
+   print IO::Toolkit::hash2sqlinsert(&quot;tablename&quot;,%hash).&quot;\n&quot;;
+   
+Result:</pre>
+<pre>
+   insert into tablename (firstname,lastname) values (&quot;Markus&quot;,&quot;Linke&quot;)</pre>
+<p>IO::Toolkit::sql2data executes SQL statement and creates a array of hashs</p>
+<pre>
+   use IO::Toolkit;
+   use Data::Dumper;
+   print Dumper(IO::Toolkit::sql2data($dbh,&quot;select * from environments&quot;));</pre>
+<p>
+</p>
+<h2><a name="io::toolkit::encrypt_and_io::toolkit::decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></h2>
+<p>needs two strings as parameters (e.g. seed and password) and returns an
+encrypted/decrypted value.</p>
+<p>
+</p>
+<h2><a name="io::toolkit::pid(exclusive|overwrite|remove,/tmp/filename.pid);">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></h2>
+<p>Create or delete PID file. If set to exclusive, the program dies if the 
+file already exists.</p>
+<p>
+</p>
+<h2><a name="my_$md5_=_io::toolkit::get_md5_checksum(toolkit.pm);">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></h2>
+<p>Create a MD5 checksum for the filename provided.</p>
+<p>
+</p>
+<hr />
+<h1><a name="export">EXPORT</a></h1>
+<p>logme and gettimestamp are exported.</p>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<pre>
+   <a href="http://www.linke.de">http://www.linke.de</a> for my personal homepage
+   <a href="http://www.nmsalert.com">http://www.nmsalert.com</a> for website monitoring solutions
+   <a href="http://www.trackalizer.com">http://www.trackalizer.com</a> for website visitor tracking and clickpath analysis
+   
+=head1 MAILING LIST</pre>
+<p>You can join the IO::Toolkit mailing list by sending an email to:</p>
+<pre>
+   iotoolkit-l-subscribe-request@listserv.it-projects.com   
+   
+=head1 Known Bugs</pre>
+<pre>
+   none (for now)
+   
+=head1 AUTHOR</pre>
+<p>Markus Linke, <a href="mailto:markus.linke@linke.de">markus.linke@linke.de</a></p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
+<p>Copyright 2003-2004 by Markus Linke
+
+</p>
+<p>This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
+
+</p>
+
+</body>
+
+</html>

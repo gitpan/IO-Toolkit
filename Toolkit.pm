@@ -1,8 +1,8 @@
 package IO::Toolkit;
 
-#$LastChangedDate: 2004-11-14 13:00:36 +0000 (Sun, 14 Nov 2004) $
-#$LastChangedRevision: 9 $
-#$Id: Toolkit.pm 9 2004-11-14 13:00:36Z root $
+#$LastChangedDate: 2004-11-14 13:08:30 +0000 (Sun, 14 Nov 2004) $
+#$LastChangedRevision: 10 $
+#$Id: Toolkit.pm 10 2004-11-14 13:08:30Z root $
 
 use 5.008;
 use strict;
@@ -31,7 +31,7 @@ our %EXPORT_TAGS = (
 our @EXPORT_OK = (@{$EXPORT_TAGS{'all'}});
 
 our @EXPORT  = qw(&logme &gettimestamp);
-$VERSION = "1.".sprintf("%0.5f",0+((qw$LastChangedRevision: 9 $)[-1])/100000);
+$VERSION = "1.".sprintf("%0.5f",0+((qw$LastChangedRevision: 10 $)[-1])/100000);
 
 
 sub logme
@@ -353,13 +353,47 @@ Digest::MD5 and DirHandle used for checksum routines.
 
 =head1 SYNOPSIS
 
-Sample Script:
+Sample Script (please also have a look into the samples directory):
 
-   ... soon ...
+   use IO::Toolkit;
+   use File::Basename;
+
+   package main;
+   use vars qw($getopt_loglevel $program $programname);
+
+   my $program = basename($0);    
+   $programname = $program;
+   $programname =~ s/\.pl//g;
+
+   my $logfilename = $programname . ".log";
+   my $VERSION = sprintf "%d.%05d", '$Revision:   1.4  $' =~ /(\d+)/g;
+   my $description = "Script";
+
+   my $extra;
+   my @extra_options = (
+  			{ 
+		  		Spec		=>  "extra=s",
+		  		Variable  	=> \$extra,
+		  		Help		=> "--extra=whatever",
+		  		Verbose		=> ["--extra=whatever",
+					    	    "whatever whenever...",
+				   	   	   ] 
+   			},
+   		    );
+   		
+   IO::Toolkit::commandline(@extra_options);
+
+   logme("open", $logfilename);
+   logme("M","$programname V$VERSION started --------------------------------------------------");
+   logme("C", "Logfile $logfilename used.");
+   logme("M","$programname V$VERSION ended   --------------------------------------------------");
+   logme("close");
    
 This displays and creates a logfile like this:
 
-   ... soon ...
+   2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 started --------------------------------------------------
+   2004-11-14 13:07:48 [mytemplate] <C> Logfile mytemplate.log used.
+   2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 ended   --------------------------------------------------
 
 =head1 DESCRIPTION
 

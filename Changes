@@ -1,4 +1,8 @@
 ------------------------------------------------------------------------
+r10 | root | 2004-11-14 13:08:30 +0000 (Sun, 14 Nov 2004) | 1 line
+
+POD documentation updated
+------------------------------------------------------------------------
 r9 | root | 2004-11-14 13:00:36 +0000 (Sun, 14 Nov 2004) | 1 line
 
 Version Number corrected to match IO::Toolkit rather than IOToolkit
