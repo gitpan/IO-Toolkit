@@ -1,0 +1,13 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         IO-Toolkit
+version:      1.0.00013
+version_from: Toolkit.pm
+installdirs:  site
+requires:
+    Crypt::RC6:                    DirHandle
+    Digest::MD5:                   File::Basename
+    Getopt::Long:                  
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17

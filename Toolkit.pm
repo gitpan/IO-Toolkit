@@ -1,8 +1,8 @@
 package IO::Toolkit;
 
-#$LastChangedDate: 2004-11-14 13:08:30 +0000 (Sun, 14 Nov 2004) $
-#$LastChangedRevision: 10 $
-#$Id: Toolkit.pm 10 2004-11-14 13:08:30Z root $
+#$LastChangedDate: 2004-11-27 17:57:14 +0000 (Sat, 27 Nov 2004) $
+#$LastChangedRevision: 13 $
+#$Id: Toolkit.pm 13 2004-11-27 17:57:14Z root $
 
 use 5.008;
 use strict;
@@ -31,7 +31,7 @@ our %EXPORT_TAGS = (
 our @EXPORT_OK = (@{$EXPORT_TAGS{'all'}});
 
 our @EXPORT  = qw(&logme &gettimestamp);
-$VERSION = "1.".sprintf("%0.5f",0+((qw$LastChangedRevision: 10 $)[-1])/100000);
+$VERSION = "1.".sprintf("%0.5f",0+((qw$LastChangedRevision: 13 $)[-1])/100000);
 
 
 sub logme
@@ -488,7 +488,7 @@ logme and gettimestamp are exported.
 
 You can join the IO::Toolkit mailing list by sending an email to:
 
-   iotoolkit-l-subscribe-request@listserv.it-projects.com   
+   iotoolkit-l-subscribe-request@it-projects.com   
    
 =head1 Known Bugs
 

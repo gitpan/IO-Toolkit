@@ -1,4 +1,4 @@
-use IOToolkit;
+use IO::Toolkit;
 use Test::More tests => 7;
   
 BEGIN { 
@@ -17,7 +17,7 @@ my $timestamp = gettimestamp("filename");
 cmp_ok(length($timestamp),"==",14,"Timestamp");
 
 my %hash=(module=>"IO::Toolkit",copyright=>"Markus Linke");
-my $sql=IOToolkit::hash2sqlinsert("testtable",%hash);
+my $sql=IO::Toolkit::hash2sqlinsert("testtable",%hash);
 cmp_ok($sql,"==",'insert into testtable (copyright,module) values (\'Markus Linke\',\'IO::Toolkit\')',"hash2sqlinsert");
 
 my $md5 = IO::Toolkit::get_md5_checksum("Toolkit.pm");

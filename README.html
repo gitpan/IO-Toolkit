@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Toolkit.pm</title>
-<link rev="made" href="mailto:root@localhost" />
+<link rev="made" href="mailto:root@mobile.nmsalert.local" />
 </head>
 
 <body style="background-color: white">
@@ -19,13 +19,13 @@
 	<li><a href="#description">DESCRIPTION</a></li>
 	<ul>
 
-		<li><a href="#io::toolkit::logme(m,message)">IO::Toolkit::logme(``M'',``Message'')</a></li>
-		<li><a href="#io::toolkit::moduleinfo">IO::Toolkit::moduleinfo</a></li>
-		<li><a href="#io::toolkit::trim">IO::Toolkit::trim</a></li>
-		<li><a href="#io::toolkit::hash2sql">IO::Toolkit::hash2sql</a></li>
-		<li><a href="#io::toolkit::encrypt_and_io::toolkit::decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></li>
-		<li><a href="#io::toolkit::pid(exclusive|overwrite|remove,/tmp/filename.pid);">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></li>
-		<li><a href="#my_$md5_=_io::toolkit::get_md5_checksum(toolkit.pm);">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></li>
+		<li><a href="#io__toolkit__logme_m_message_">IO::Toolkit::logme(``M'',``Message'')</a></li>
+		<li><a href="#io__toolkit__moduleinfo">IO::Toolkit::moduleinfo</a></li>
+		<li><a href="#io__toolkit__trim">IO::Toolkit::trim</a></li>
+		<li><a href="#io__toolkit__hash2sql">IO::Toolkit::hash2sql</a></li>
+		<li><a href="#io__toolkit__encrypt_and_io__toolkit__decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></li>
+		<li><a href="#io__toolkit__pid_exclusive_overwrite_remove__tmp_filename_pid__">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></li>
+		<li><a href="#my__md5___io__toolkit__get_md5_checksum_toolkit_pm__">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></li>
 	</ul>
 
 	<li><a href="#export">EXPORT</a></li>
@@ -118,21 +118,21 @@ If you specifiy the format &amp;gettimestamp(``filename'') it returns something 
 this: 20041009131500</p>
 <p>
 </p>
-<h2><a name="io::toolkit::logme(m,message)">IO::Toolkit::logme(``M'',``Message'')</a></h2>
+<h2><a name="io__toolkit__logme_m_message_">IO::Toolkit::logme(``M'',``Message'')</a></h2>
 <p>The first parameter specifies the severity of the message. The message is only logged, if 
 $getopt_loglevel contains that severity.</p>
 <p>Because IO::Toolkit::logme is exported, you can just use <code>logme(``M'',``message'')</code> in your scripts.</p>
 <p>
 </p>
-<h2><a name="io::toolkit::moduleinfo">IO::Toolkit::moduleinfo</a></h2>
+<h2><a name="io__toolkit__moduleinfo">IO::Toolkit::moduleinfo</a></h2>
 <p>prints a list of loaded modules.</p>
 <p>
 </p>
-<h2><a name="io::toolkit::trim">IO::Toolkit::trim</a></h2>
+<h2><a name="io__toolkit__trim">IO::Toolkit::trim</a></h2>
 <p>trims a variable.</p>
 <p>
 </p>
-<h2><a name="io::toolkit::hash2sql">IO::Toolkit::hash2sql</a></h2>
+<h2><a name="io__toolkit__hash2sql">IO::Toolkit::hash2sql</a></h2>
 <p>creates SQL code to insert a hash into a table.</p>
 <p>Example:</p>
 <pre>
@@ -155,17 +155,17 @@ Result:</pre>
    print Dumper(IO::Toolkit::sql2data($dbh,&quot;select * from environments&quot;));</pre>
 <p>
 </p>
-<h2><a name="io::toolkit::encrypt_and_io::toolkit::decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></h2>
+<h2><a name="io__toolkit__encrypt_and_io__toolkit__decrypt">IO::Toolkit::encrypt and IO::Toolkit::decrypt</a></h2>
 <p>needs two strings as parameters (e.g. seed and password) and returns an
 encrypted/decrypted value.</p>
 <p>
 </p>
-<h2><a name="io::toolkit::pid(exclusive|overwrite|remove,/tmp/filename.pid);">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></h2>
+<h2><a name="io__toolkit__pid_exclusive_overwrite_remove__tmp_filename_pid__">IO::Toolkit::pid(``exclusive|overwrite|remove'',``/tmp/filename.pid'');</a></h2>
 <p>Create or delete PID file. If set to exclusive, the program dies if the 
 file already exists.</p>
 <p>
 </p>
-<h2><a name="my_$md5_=_io::toolkit::get_md5_checksum(toolkit.pm);">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></h2>
+<h2><a name="my__md5___io__toolkit__get_md5_checksum_toolkit_pm__">my $md5 = IO::Toolkit::get_md5_checksum(``Toolkit.pm'');</a></h2>
 <p>Create a MD5 checksum for the filename provided.</p>
 <p>
 </p>
@@ -184,7 +184,7 @@ file already exists.</p>
 =head1 MAILING LIST</pre>
 <p>You can join the IO::Toolkit mailing list by sending an email to:</p>
 <pre>
-   iotoolkit-l-subscribe-request@listserv.it-projects.com   
+   iotoolkit-l-subscribe-request@it-projects.com   
    
 =head1 Known Bugs</pre>
 <pre>

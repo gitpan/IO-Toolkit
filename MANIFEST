@@ -9,3 +9,4 @@ t/2.t
 t/3.t
 samples/mytemplate.pl
 samples/hash2sql.pl
+META.yml                                 Module meta-data (added by MakeMaker)
