@@ -1,0 +1,119 @@
+NAME
+    IO::Toolkit
+
+ABSTRACT
+    IO::Toolkit - Perl extension to create logfiles
+
+PREREQUISITS
+    This module needs Crypt::RC6 for its encryption/decryption routine.
+    Digest::MD5 and DirHandle used for checksum routines.
+
+SYNOPSIS
+    Sample Script:
+
+       ... soon ...
+   
+    This displays and creates a logfile like this:
+
+       ... soon ...
+
+DESCRIPTION
+    Provides a human-readable logfile and is ment to replace "print" and
+    "die" in your programs.
+
+    This module was written to provide an easy way to log messages. It
+    checks for an option --loglevel=EMCDQ- where each character stands for a
+    certain level. e.g.
+
+       E   = Error
+       S   = System
+       M   = Message
+       D   = Debug
+       -   = Silent
+       all = All messages
+
+    You can use all characters you would like to use. These are just
+    examples.
+
+    the minus ("-") has a special meaning: supresses output to the screen
+    and ONLY logs them to the file. Please see the sample script for more
+    details.
+
+    The function gettimestamp returns the current time in the format used
+    for the logfile. If you specifiy the format &gettimestamp("filename") it
+    returns something like this: 20041009131500
+
+  IO::Toolkit::logme("M","Message")
+    The first parameter specifies the severity of the message. The message
+    is only logged, if $getopt_loglevel contains that severity.
+
+    Because IO::Toolkit::logme is exported, you can just use
+    logme("M","message") in your scripts.
+
+  IO::Toolkit::moduleinfo
+    prints a list of loaded modules.
+
+  IO::Toolkit::trim
+    trims a variable.
+
+  IO::Toolkit::hash2sql
+    creates SQL code to insert a hash into a table.
+
+    Example:
+
+       use IO::Toolkit;
+
+       my %hash=(
+          firstname=>"Markus",
+          lastname=>"Linke",
+       );
+
+       print IO::Toolkit::hash2sqlinsert("tablename",%hash)."\n";
+   
+    Result:
+
+       insert into tablename (firstname,lastname) values ("Markus","Linke") 
+
+    IO::Toolkit::sql2data executes SQL statement and creates a array of
+    hashs
+
+       use IO::Toolkit;
+       use Data::Dumper;
+       print Dumper(IO::Toolkit::sql2data($dbh,"select * from environments"));
+
+  IO::Toolkit::encrypt and IO::Toolkit::decrypt
+    needs two strings as parameters (e.g. seed and password) and returns an
+    encrypted/decrypted value.
+
+  IO::Toolkit::pid("exclusive|overwrite|remove","/tmp/filename.pid");
+    Create or delete PID file. If set to exclusive, the program dies if the
+    file already exists.
+
+  my $md5 = IO::Toolkit::get_md5_checksum("Toolkit.pm");
+    Create a MD5 checksum for the filename provided.
+
+EXPORT
+    logme and gettimestamp are exported.
+
+SEE ALSO
+       http://www.linke.de for my personal homepage
+       http://www.nmsalert.com for website monitoring solutions
+       http://www.trackalizer.com for website visitor tracking and clickpath analysis
+   
+MAILING LIST
+    You can join the IO::Toolkit mailing list by sending an email to:
+
+       iotoolkit-l-subscribe-request@listserv.it-projects.com   
+   
+Known Bugs
+       none (for now)
+   
+AUTHOR
+    Markus Linke, markus.linke@linke.de
+
+COPYRIGHT AND LICENSE
+    Copyright 2003-2004 by Markus Linke
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
