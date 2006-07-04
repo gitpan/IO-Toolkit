@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Toolkit.pm</title>
-<link rev="made" href="mailto:root@mobile.nmsalert.local" />
+<link rev="made" href="mailto:rt3@linke.de" />
 </head>
 
 <body style="background-color: white">
@@ -16,6 +16,7 @@
 	<li><a href="#abstract">ABSTRACT</a></li>
 	<li><a href="#prerequisits">PREREQUISITS</a></li>
 	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#important_notice">IMPORTANT NOTICE</a></li>
 	<li><a href="#description">DESCRIPTION</a></li>
 	<ul>
 
@@ -67,7 +68,7 @@ Digest::MD5 and DirHandle used for checksum routines.</p>
    $programname =~ s/\.pl//g;</pre>
 <pre>
    my $logfilename = $programname . &quot;.log&quot;;
-   my $VERSION = sprintf &quot;%d.%05d&quot;, '$Revision:   1.4  $' =~ /(\d+)/g;
+   my $VERSION = sprintf &quot;%d.%05d&quot;, '$Revision: 5 $' =~ /(\d+)/g;
    my $description = &quot;Script&quot;;</pre>
 <pre>
    my $extra;
@@ -95,6 +96,11 @@ This displays and creates a logfile like this:</pre>
    2004-11-14 13:07:48 [mytemplate] &lt;M&gt; mytemplate V1.00004 started --------------------------------------------------
    2004-11-14 13:07:48 [mytemplate] &lt;C&gt; Logfile mytemplate.log used.
    2004-11-14 13:07:48 [mytemplate] &lt;M&gt; mytemplate V1.00004 ended   --------------------------------------------------</pre>
+<p>
+</p>
+<hr />
+<h1><a name="important_notice">IMPORTANT NOTICE</a></h1>
+<p>If you are looking for a better logging-module, please check Log4Perl instead.</p>
 <p>
 </p>
 <hr />
@@ -178,25 +184,16 @@ file already exists.</p>
 <h1><a name="see_also">SEE ALSO</a></h1>
 <pre>
    <a href="http://www.linke.de">http://www.linke.de</a> for my personal homepage
-   <a href="http://www.nmsalert.com">http://www.nmsalert.com</a> for website monitoring solutions
-   <a href="http://www.trackalizer.com">http://www.trackalizer.com</a> for website visitor tracking and clickpath analysis
-   
-=head1 MAILING LIST</pre>
-<p>You can join the IO::Toolkit mailing list by sending an email to:</p>
-<pre>
-   iotoolkit-l-subscribe-request@it-projects.com   
-   
-=head1 Known Bugs</pre>
-<pre>
-   none (for now)
-   
+   Submit bugs at <a href="http://bugzilla.it-projects.com">http://bugzilla.it-projects.com</a>
+   Version Control provided by <a href="http://svn.it-projects.com">http://svn.it-projects.com</a>
+      
 =head1 AUTHOR</pre>
 <p>Markus Linke, <a href="mailto:markus.linke@linke.de">markus.linke@linke.de</a></p>
 <p>
 </p>
 <hr />
 <h1><a name="copyright_and_license">COPYRIGHT AND LICENSE</a></h1>
-<p>Copyright 2003-2004 by Markus Linke
+<p>Copyright 2003-2006 by Markus Linke
 
 </p>
 <p>This library is free software; you can redistribute it and/or modify

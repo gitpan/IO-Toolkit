@@ -1,8 +1,8 @@
 package IO::Toolkit;
 
-#$LastChangedDate: 2004-11-27 17:57:14 +0000 (Sat, 27 Nov 2004) $
-#$LastChangedRevision: 13 $
-#$Id: Toolkit.pm 13 2004-11-27 17:57:14Z root $
+# $LastChangedDate: 2006-07-03 19:08:16 -0500 (Mon, 03 Jul 2006) $
+# $LastChangedRevision: 5 $ 
+# $LastChangedBy: markus.linke@linke.de $ 
 
 use 5.008;
 use strict;
@@ -31,7 +31,7 @@ our %EXPORT_TAGS = (
 our @EXPORT_OK = (@{$EXPORT_TAGS{'all'}});
 
 our @EXPORT  = qw(&logme &gettimestamp);
-$VERSION = "1.".sprintf("%0.5f",0+((qw$LastChangedRevision: 13 $)[-1])/100000);
+$VERSION = 1 + sprintf("%3f",((qw$LastChangedRevision: 5 $)[-1])/1000);
 
 
 sub logme
@@ -366,7 +366,7 @@ Sample Script (please also have a look into the samples directory):
    $programname =~ s/\.pl//g;
 
    my $logfilename = $programname . ".log";
-   my $VERSION = sprintf "%d.%05d", '$Revision:   1.4  $' =~ /(\d+)/g;
+   my $VERSION = sprintf "%d.%05d", '$Revision: 5 $' =~ /(\d+)/g;
    my $description = "Script";
 
    my $extra;
@@ -394,6 +394,10 @@ This displays and creates a logfile like this:
    2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 started --------------------------------------------------
    2004-11-14 13:07:48 [mytemplate] <C> Logfile mytemplate.log used.
    2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 ended   --------------------------------------------------
+
+=head1 IMPORTANT NOTICE
+
+If you are looking for a better logging-module, please check Log4Perl instead.
 
 =head1 DESCRIPTION
 
@@ -481,26 +485,16 @@ logme and gettimestamp are exported.
 =head1 SEE ALSO
 
    http://www.linke.de for my personal homepage
-   http://www.nmsalert.com for website monitoring solutions
-   http://www.trackalizer.com for website visitor tracking and clickpath analysis
-   
-=head1 MAILING LIST
-
-You can join the IO::Toolkit mailing list by sending an email to:
-
-   iotoolkit-l-subscribe-request@it-projects.com   
-   
-=head1 Known Bugs
-
-   none (for now)
-   
+   Submit bugs at http://bugzilla.it-projects.com
+   Version Control provided by http://svn.it-projects.com
+      
 =head1 AUTHOR
 
 Markus Linke, markus.linke@linke.de
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003-2004 by Markus Linke
+Copyright 2003-2006 by Markus Linke
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

@@ -22,7 +22,7 @@ SYNOPSIS
        $programname =~ s/\.pl//g;
 
        my $logfilename = $programname . ".log";
-       my $VERSION = sprintf "%d.%05d", '$Revision:   1.4  $' =~ /(\d+)/g;
+       my $VERSION = sprintf "%d.%05d", '$Revision: 5 $' =~ /(\d+)/g;
        my $description = "Script";
 
        my $extra;
@@ -50,6 +50,10 @@ SYNOPSIS
        2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 started --------------------------------------------------
        2004-11-14 13:07:48 [mytemplate] <C> Logfile mytemplate.log used.
        2004-11-14 13:07:48 [mytemplate] <M> mytemplate V1.00004 ended   --------------------------------------------------
+
+IMPORTANT NOTICE
+    If you are looking for a better logging-module, please check Log4Perl
+    instead.
 
 DESCRIPTION
     Provides a human-readable logfile and is ment to replace "print" and
@@ -131,22 +135,14 @@ EXPORT
 
 SEE ALSO
        http://www.linke.de for my personal homepage
-       http://www.nmsalert.com for website monitoring solutions
-       http://www.trackalizer.com for website visitor tracking and clickpath analysis
-   
-MAILING LIST
-    You can join the IO::Toolkit mailing list by sending an email to:
-
-       iotoolkit-l-subscribe-request@it-projects.com   
-   
-Known Bugs
-       none (for now)
-   
+       Submit bugs at http://bugzilla.it-projects.com
+       Version Control provided by http://svn.it-projects.com
+      
 AUTHOR
     Markus Linke, markus.linke@linke.de
 
 COPYRIGHT AND LICENSE
-    Copyright 2003-2004 by Markus Linke
+    Copyright 2003-2006 by Markus Linke
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

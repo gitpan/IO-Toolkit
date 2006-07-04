@@ -1,21 +1,24 @@
 ------------------------------------------------------------------------
-r13 | root | 2004-11-27 17:57:14 +0000 (Sat, 27 Nov 2004) | 1 line
+r5 | markus.linke@linke.de | 2006-07-03 19:08:16 -0500 (Mon, 03 Jul 2006) | 3 lines
 
-address of supportlist corrected
+
+BugTraq: 22
+
 ------------------------------------------------------------------------
-r10 | root | 2004-11-14 13:08:30 +0000 (Sun, 14 Nov 2004) | 1 line
+r4 | markus.linke@linke.de | 2006-07-03 19:03:20 -0500 (Mon, 03 Jul 2006) | 3 lines
 
-POD documentation updated
+version number corrected
+BugTraq: 22
+
 ------------------------------------------------------------------------
-r9 | root | 2004-11-14 13:00:36 +0000 (Sun, 14 Nov 2004) | 1 line
+r3 | markus.linke@linke.de | 2006-07-03 19:02:23 -0500 (Mon, 03 Jul 2006) | 3 lines
 
-Version Number corrected to match IO::Toolkit rather than IOToolkit
+Links updated; Log4Perl added
+BugTraq: 22
+
 ------------------------------------------------------------------------
-r8 | root | 2004-11-14 12:59:02 +0000 (Sun, 14 Nov 2004) | 1 line
+r2 | markus.linke@linke.de | 2006-07-03 18:53:09 -0500 (Mon, 03 Jul 2006) | 2 lines
 
-Preparation for CPAN release
-------------------------------------------------------------------------
-r1 | root | 2004-11-14 12:37:07 +0000 (Sun, 14 Nov 2004) | 1 line
+version 13 added from cpan
 
-Initial
 ------------------------------------------------------------------------
