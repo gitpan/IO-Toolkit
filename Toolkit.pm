@@ -1,7 +1,7 @@
 package IO::Toolkit;
 
-# $LastChangedDate: 2006-07-03 19:08:16 -0500 (Mon, 03 Jul 2006) $
-# $LastChangedRevision: 5 $ 
+# $LastChangedDate: 2006-07-06 21:49:47 -0500 (Thu, 06 Jul 2006) $
+# $LastChangedRevision: 8 $ 
 # $LastChangedBy: markus.linke@linke.de $ 
 
 use 5.008;
@@ -31,7 +31,7 @@ our %EXPORT_TAGS = (
 our @EXPORT_OK = (@{$EXPORT_TAGS{'all'}});
 
 our @EXPORT  = qw(&logme &gettimestamp);
-$VERSION = 1 + sprintf("%3f",((qw$LastChangedRevision: 5 $)[-1])/1000);
+$VERSION = 1 + sprintf("%3f",((qw$LastChangedRevision: 8 $)[-1])/1000);
 
 
 sub logme
@@ -366,7 +366,7 @@ Sample Script (please also have a look into the samples directory):
    $programname =~ s/\.pl//g;
 
    my $logfilename = $programname . ".log";
-   my $VERSION = sprintf "%d.%05d", '$Revision: 5 $' =~ /(\d+)/g;
+   my $VERSION = sprintf "%d.%05d", '$Revision: 8 $' =~ /(\d+)/g;
    my $description = "Script";
 
    my $extra;
@@ -484,9 +484,13 @@ logme and gettimestamp are exported.
 
 =head1 SEE ALSO
 
-   http://www.linke.de for my personal homepage
-   Submit bugs at http://bugzilla.it-projects.com
-   Version Control provided by http://svn.it-projects.com
+   http://www.linke.de for my personal homepage and
+   http://trac.it-projects.com/iotoolkit for the project TRAC pages
+   
+   Please submit bugs at http://bugzilla.it-projects.com
+   
+   Hosted Subversion Version Control provided by http://svn.it-projects.com
+   Checkout the latest version at https://svn.it-projects.com/svn/iotoolkit
       
 =head1 AUTHOR
 
